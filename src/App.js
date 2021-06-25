@@ -11,14 +11,12 @@ const App = () => {
   const [current, setCurrent] = useState({});
 
   const addUser = (user) => {
-    console.log("Adding user ", user)
     setUsers([user, ...users]);
     setCurrent({})
   };
 
   const deleteUser = (user) => {
-    console.log("Deleting user ", user)
-    const deleted = users.pop(users.indexOf(user));
+    const deleted = users.splice(users.indexOf(user), 1)[0];
     if (current.id === deleted.id) {
       setCurrent({});
     }
@@ -26,11 +24,9 @@ const App = () => {
   }
 
   const editUser = (user) => {
-    console.log("Editing user ", user)
     setCurrent(user);
   }
   const saveUser = (previous, updated) => {
-    console.log("Saving user ", previous, updated)
     users[users.indexOf(previous)] = updated;
     setUsers([...users]);
     setCurrent({})
