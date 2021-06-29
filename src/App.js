@@ -34,6 +34,9 @@ const App = () => {
   const preDeleteUser = (user) => {
     setToDelete(user);
   }
+  const cancelDeleteUser = () => {
+    setToDelete();
+  }
   return (
     <Container className="base-elements">
       <Header />
@@ -41,7 +44,7 @@ const App = () => {
         <UserForm current={current} addUser={addUser} saveUser={saveUser} />
         <UsersList users={users} deleteUser={preDeleteUser} editUser={editUser} />
       </Row>
-      <DeleteModal user={toDelete} onConfirm={deleteUser} />
+      <DeleteModal user={toDelete} onConfirm={deleteUser} onCancel={cancelDeleteUser} />
     </Container>
   );
 };
