@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Col, Table, Button } from "react-bootstrap";
+import { Col, Table } from "react-bootstrap";
 
 
 const UsersList = ({ users, editUser, deleteUser }) => {
@@ -31,8 +31,8 @@ const UsersList = ({ users, editUser, deleteUser }) => {
                 <td>{id}</td>
                 <td>{name}</td>
                 <td>{age}</td>
-                <td><Button variant="light" onClick={(e) => handleEditLocal(e, id)}>✏️</Button></td>
-                <td><Button variant="light" onClick={(e) => handleDeleteLocal(e, id)}>❌</Button></td>
+                <td><a href="App" variant="light" onClick={(e) => handleEditLocal(e, id)}>✏️</a></td>
+                <td><a href="App" variant="light" onClick={(e) => handleDeleteLocal(e, id)}>❌</a></td>
               </tr>
             ))}
         </tbody>
